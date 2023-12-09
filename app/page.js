@@ -5,6 +5,7 @@ import { database } from "./firebase";
 import { UserAuth } from "./context/AuthContext";
 import { FaTrashCan } from "react-icons/fa6";
 import Spinner from "./components/Spinner"
+import Head from "next/head";
 
 export default function Home() {
   const { user } = UserAuth();
@@ -69,6 +70,9 @@ export default function Home() {
   console.log(tasks);
   return (
     <main className="p-4">
+      <Head>
+        <title>Todo List</title>
+      </Head>
       {user ? (
         <div>
           <h2>Task List</h2>

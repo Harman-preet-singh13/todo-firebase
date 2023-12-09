@@ -62,15 +62,27 @@ const AddTaskForm = () => {
           required
         />
 
-        <button
-          className="mt-5 mx-auto w-36 px-2 py-2 
+        {user ? (
+          <button
+            className="mt-5 mx-auto w-36 px-2 py-2 
       rounded-lg font-semibold border-2 border-zinc-400 
       hover:bg-zinc-400 hover:text-zinc-700
       "
-          type="submit"
-        >
-          Add Task
-        </button>
+            type="submit"
+          >
+            Add Task
+          </button>
+        ) : (
+          <button
+            className="mt-5 mx-auto w-36 px-2 py-2 
+            text-white bg-blue-300 rounded focus:outline-none 
+"
+            type="submit"
+            disabled
+          >
+            User isn't login
+          </button>
+        )}
       </form>
     </div>
   );
